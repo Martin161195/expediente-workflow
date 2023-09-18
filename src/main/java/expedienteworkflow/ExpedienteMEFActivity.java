@@ -8,13 +8,18 @@ public interface ExpedienteMEFActivity {
 
 
     @ActivityMethod
-    void digitalization(String recordId);
+    void digitalization(String recordId, String year, String entity, String entityDescription, String operationType,
+                        String operationDescription);
     @ActivityMethod
-    void validation(String recordId);
+    void validation(String recordId, String year, String entity, String entityDescription, String operationType,
+                    String operationDescription);
     @ActivityMethod
-    void registration(String recordId);
+    void registration(String recordId, String year, String entity, String entityDescription, String operationType,
+                      String operationDescription);
     @ActivityMethod
-    void enqueue(String recordId);
+    void enqueue(String recordId, String year, String entity, String entityDescription, String operationType,
+                 String operationDescription);
     @ActivityMethod
-    void distribution(String recordId);
+    void distribution(String recordId, String year, String entity, String entityDescription, String operationType,
+                      String operationDescription);
 }

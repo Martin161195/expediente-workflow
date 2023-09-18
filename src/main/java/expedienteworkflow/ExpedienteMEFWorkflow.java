@@ -7,5 +7,6 @@ import io.temporal.workflow.WorkflowMethod;
 public interface ExpedienteMEFWorkflow {
 
     @WorkflowMethod
-    void ProcessRecord(String recordId);
+    void ProcessRecord(String recordId, String year, String entity, String entityDescription, String operationType,
+                       String operationDescription);
 }

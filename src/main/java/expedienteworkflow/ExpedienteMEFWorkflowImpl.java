@@ -31,13 +31,23 @@ public class ExpedienteMEFWorkflowImpl implements ExpedienteMEFWorkflow{
     }};
     private final ExpedienteMEFActivity mefActivity = Workflow.newActivityStub(ExpedienteMEFActivity.class, defaultActivityOptions, perActivityMethodOptions);
     @Override
-    public void ProcessRecord(String recordId) {
+    public void ProcessRecord(String recordId, String year, String entity, String entityDescription, String operationType,
+                              String operationDescription) {
 
-        mefActivity.digitalization(recordId);
-        mefActivity.validation(recordId);
-        mefActivity.registration(recordId);
-        mefActivity.enqueue(recordId);
-        mefActivity.distribution(recordId);
+        mefActivity.digitalization( recordId,  year,  entity,  entityDescription,  operationType,
+                  operationDescription);
+
+        mefActivity.validation( recordId,  year,  entity,  entityDescription,  operationType,
+                operationDescription);
+
+        mefActivity.registration( recordId,  year,  entity,  entityDescription,  operationType,
+                operationDescription);
+
+        mefActivity.enqueue( recordId,  year,  entity,  entityDescription,  operationType,
+                 operationDescription);
+
+        mefActivity.distribution( recordId,  year,  entity,  entityDescription,  operationType,
+                 operationDescription);
 
     }
 }
